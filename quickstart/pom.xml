@@ -23,5 +23,53 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-deploy-plugin</artifactId>
+    <version>2.7</version>
+</dependency>
   </dependencies>
+  
+  <build>
+  <plugins>
+  	<plugin>
+  		<groupId>org.codehaus.mojo</groupId>
+  		<artifactId>cobertura-maven-plugin</artifactId>
+  		<version>2.7</version>
+  		<configuration>
+  			<formats>
+  				<format>html</format>
+  				<format>xml</format>
+  			</formats>
+  		</configuration>
+  	</plugin>
+  	
+  	<plugin>
+  		<groupId>org.apache.maven.plugins</groupId>
+  		<artifactId>maven-war-plugin</artifactId>
+  		<version>2.7</version>
+  		<configuration>
+  			<archive>
+  				<manifestEntries>
+  					<version>${project.version}</version>
+  				</manifestEntries>
+  			</archive>
+  		</configuration>
+  	</plugin>
+  	
+  	<plugin>
+  		<groupId>org.sonarsource.scanner.maven</groupId>
+  		<artifactId>sonar-maven-plugin</artifactId>
+  		<version>3.2</version>
+   	</plugin>
+  </plugins>
+  </build>
+  <distributionManagement>
+  	<repository>
+  		<id>artifactory</id>
+  		<name>Quickstart_Snapshot</name>
+  		<url>http://localhost:8081/artifactory_quickstart_snapshot</url>
+  	</repository>
+  </distributionManagement>
 </project>
