@@ -45,10 +45,10 @@
   		</configuration>
   	</plugin>
   	
-  	<plugin>
+  	<!-- <plugin>
   		<groupId>org.apache.maven.plugins</groupId>
   		<artifactId>maven-war-plugin</artifactId>
-  		<version>2.7</version>
+  		<version>2.1.1</version>
   		<configuration>
   			<archive>
   				<manifestEntries>
@@ -56,7 +56,7 @@
   				</manifestEntries>
   			</archive>
   		</configuration>
-  	</plugin>
+  	</plugin> -->
   	
   	<plugin>
   		<groupId>org.sonarsource.scanner.maven</groupId>
@@ -68,8 +68,8 @@
   <distributionManagement>
   	<repository>
   		<id>artifactory</id>
-  		<name>Quickstart_Snapshot</name>
-  		<url>http://localhost:8081/artifactory_quickstart_snapshot</url>
+  		<name>example-repo-local</name>
+  		<url>http://localhost:8081/artifactory/example-repo-local</url>
   	</repository>
   </distributionManagement>
 </project>
