@@ -10,7 +10,7 @@ public class App
     {
     	int b=a(20);
     	System.out.println(b);
-        System.out.println( "Test System!" );
+        System.out.println( "Hellow System!" );
     }
     
     public static int a(int a)
